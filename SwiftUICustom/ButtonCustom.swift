@@ -2,7 +2,7 @@
 //  CustomButton.swift
 //  SwiftUICustom
 //
-//  Created by SeungHwan Yoo on 2024/07/06.
+//  Created by Yoo on 2024/07/06.
 //
 
 import SwiftUI
@@ -108,7 +108,8 @@ struct CustomButton: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .frame(maxWidth:.infinity, maxHeight:.infinity)
+                .frame(maxWidth:.infinity, 
+                       maxHeight:.infinity)
         }
         .buttonStyle(CustomButtonStyle(backgroundColor: backgroundColor,
                                        foregroundColor: foregroundColor,

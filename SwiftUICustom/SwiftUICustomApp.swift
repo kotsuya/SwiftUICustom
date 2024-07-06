@@ -2,7 +2,7 @@
 //  SwiftUICustomApp.swift
 //  SwiftUICustom
 //
-//  Created by SeungHwan Yoo on 2024/07/06.
+//  Created by Yoo on 2024/07/06.
 //
 
 import SwiftUI

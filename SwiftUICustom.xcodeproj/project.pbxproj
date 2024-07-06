@@ -11,6 +11,8 @@
 		E1DB36AB2C392D090082CA6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB36AA2C392D090082CA6D /* ContentView.swift */; };
 		E1DB36AD2C392D0B0082CA6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1DB36AC2C392D0B0082CA6D /* Assets.xcassets */; };
 		E1DB36B02C392D0B0082CA6D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1DB36AF2C392D0B0082CA6D /* Preview Assets.xcassets */; };
+		E1DB36B72C392D210082CA6D /* ButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB36B62C392D210082CA6D /* ButtonCustom.swift */; };
+		E1DB36BA2C392D710082CA6D /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB36B92C392D710082CA6D /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		E1DB36AA2C392D090082CA6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E1DB36AC2C392D0B0082CA6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1DB36AF2C392D0B0082CA6D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E1DB36B62C392D210082CA6D /* ButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustom.swift; sourceTree = "<group>"; };
+		E1DB36B92C392D710082CA6D /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 				E1DB36AA2C392D090082CA6D /* ContentView.swift */,
 				E1DB36AC2C392D0B0082CA6D /* Assets.xcassets */,
 				E1DB36AE2C392D0B0082CA6D /* Preview Content */,
+				E1DB36B62C392D210082CA6D /* ButtonCustom.swift */,
+				E1DB36B92C392D710082CA6D /* Const.swift */,
 			);
 			path = SwiftUICustom;
 			sourceTree = "<group>";
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1DB36AB2C392D090082CA6D /* ContentView.swift in Sources */,
+				E1DB36BA2C392D710082CA6D /* Const.swift in Sources */,
 				E1DB36A92C392D090082CA6D /* SwiftUICustomApp.swift in Sources */,
+				E1DB36B72C392D210082CA6D /* ButtonCustom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
