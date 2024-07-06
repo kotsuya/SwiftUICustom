@@ -37,14 +37,15 @@ struct ButtonCustom: View {
 }
 
 struct CustomButtonStyle: ButtonStyle {
-    
-    let backgroundColor: Color
-    let foregroundColor: Color
-    let pressedBgColor: Color
-    let pressedFgColor: Color
     let isDisabled: Bool
     let isBorder: Bool
     let borderWidth: CGFloat
+    
+    let backgroundColor: Color
+    let foregroundColor: Color
+    
+    let pressedBgColor: Color
+    let pressedFgColor: Color
     
     func makeBody(configuration: Configuration) -> some View {
         let currentForegroundColor = isDisabled || configuration.isPressed ? pressedFgColor : foregroundColor
@@ -63,20 +64,20 @@ struct CustomButtonStyle: ButtonStyle {
 }
 
 struct CustomButton: View {
-    
-    var backgroundColor: Color
-    var foregroundColor: Color
-    
-    var pressedBgColor: Color
-    var pressedFgColor: Color
-    
     private let title: String
-    private let action: () -> Void
     private let disabled: Bool
-    private let isBorder: Bool
-    private let borderWidth: CGFloat
     private let width: CGFloat
     private let height: CGFloat
+    private let isBorder: Bool
+    private let borderWidth: CGFloat
+    
+    private let backgroundColor: Color
+    private let foregroundColor: Color
+    
+    private let pressedBgColor: Color
+    private let pressedFgColor: Color
+    
+    private let action: () -> Void
     
     init(title: String,
          disabled: Bool = false,
@@ -108,16 +109,20 @@ struct CustomButton: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .frame(maxWidth:.infinity, 
+                .frame(maxWidth:.infinity,
                        maxHeight:.infinity)
         }
-        .buttonStyle(CustomButtonStyle(backgroundColor: backgroundColor,
-                                       foregroundColor: foregroundColor,
-                                       pressedBgColor: pressedBgColor,
-                                       pressedFgColor: pressedFgColor,
-                                       isDisabled: disabled,
-                                       isBorder: isBorder,
-                                       borderWidth: borderWidth))
+        .buttonStyle(
+            CustomButtonStyle(
+                isDisabled: disabled,
+                isBorder: isBorder,
+                borderWidth: borderWidth,
+                backgroundColor: backgroundColor,
+                foregroundColor: foregroundColor,
+                pressedBgColor: pressedBgColor,
+                pressedFgColor: pressedFgColor
+            )
+        )
         .disabled(disabled)
         .frame(width: width - borderWidth, height: height - borderWidth)
     }
