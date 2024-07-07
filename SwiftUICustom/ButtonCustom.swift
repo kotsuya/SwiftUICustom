@@ -25,7 +25,8 @@ struct ButtonCustom: View {
             }
             
             CustomButton(title: "Normal Button",
-                         backgroundColor: Color.yellow) {
+                         backgroundColor: Color.blue,
+                         pressedBgColor: Color.blue.opacity(0.3)) {
                 print("Normal Button")
             }
         }

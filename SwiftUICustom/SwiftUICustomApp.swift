@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUICustomApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HalfModalCustom()
         }
     }
 }

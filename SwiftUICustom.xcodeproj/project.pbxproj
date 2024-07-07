@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1080A092C3A5E0500910CA8 /* HalfModalCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1080A082C3A5E0500910CA8 /* HalfModalCustom.swift */; };
 		E1DB36A92C392D090082CA6D /* SwiftUICustomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB36A82C392D090082CA6D /* SwiftUICustomApp.swift */; };
 		E1DB36AB2C392D090082CA6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB36AA2C392D090082CA6D /* ContentView.swift */; };
 		E1DB36AD2C392D0B0082CA6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1DB36AC2C392D0B0082CA6D /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E1080A082C3A5E0500910CA8 /* HalfModalCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalCustom.swift; sourceTree = "<group>"; };
 		E1DB36A52C392D090082CA6D /* SwiftUICustom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICustom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DB36A82C392D090082CA6D /* SwiftUICustomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICustomApp.swift; sourceTree = "<group>"; };
 		E1DB36AA2C392D090082CA6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,10 +59,11 @@
 			children = (
 				E1DB36A82C392D090082CA6D /* SwiftUICustomApp.swift */,
 				E1DB36AA2C392D090082CA6D /* ContentView.swift */,
+				E1DB36B92C392D710082CA6D /* Const.swift */,
 				E1DB36AC2C392D0B0082CA6D /* Assets.xcassets */,
 				E1DB36AE2C392D0B0082CA6D /* Preview Content */,
 				E1DB36B62C392D210082CA6D /* ButtonCustom.swift */,
-				E1DB36B92C392D710082CA6D /* Const.swift */,
+				E1080A082C3A5E0500910CA8 /* HalfModalCustom.swift */,
 			);
 			path = SwiftUICustom;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			files = (
 				E1DB36AB2C392D090082CA6D /* ContentView.swift in Sources */,
 				E1DB36BA2C392D710082CA6D /* Const.swift in Sources */,
+				E1080A092C3A5E0500910CA8 /* HalfModalCustom.swift in Sources */,
 				E1DB36A92C392D090082CA6D /* SwiftUICustomApp.swift in Sources */,
 				E1DB36B72C392D210082CA6D /* ButtonCustom.swift in Sources */,
 			);
@@ -288,6 +292,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,6 +322,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
