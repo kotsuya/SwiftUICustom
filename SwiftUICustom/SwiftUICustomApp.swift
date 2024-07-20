@@ -12,7 +12,8 @@ struct SwiftUICustomApp: App {
     var body: some Scene {
         WindowGroup {
 //            ContentView(item: 0)
-            YoutubeHome()
+//            YoutubeHome()
+            AppTabBarView()
         }
     }
 }

@@ -13,6 +13,11 @@
 		E1080A092C3A5E0500910CA8 /* HalfModalCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1080A082C3A5E0500910CA8 /* HalfModalCustom.swift */; };
 		E1080A0B2C3A789A00910CA8 /* FlexibleHeightModalCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1080A0A2C3A789A00910CA8 /* FlexibleHeightModalCustom.swift */; };
 		E1080A0D2C3A7F3500910CA8 /* BannerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1080A0C2C3A7F3500910CA8 /* BannerCustom.swift */; };
+		E1A9F9BD2C43497400A2476D /* AppTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9F9BC2C43497400A2476D /* AppTabBarView.swift */; };
+		E1A9F9BF2C43498C00A2476D /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9F9BE2C43498C00A2476D /* TabBarItem.swift */; };
+		E1A9F9C12C434FB500A2476D /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9F9C02C434FB500A2476D /* CustomTabView.swift */; };
+		E1A9F9C32C43511A00A2476D /* CustomTabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9F9C22C43511A00A2476D /* CustomTabContainerView.swift */; };
+		E1A9F9C52C4353F300A2476D /* TabBarItemPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9F9C42C4353F300A2476D /* TabBarItemPreferenceKey.swift */; };
 		E1DB36A92C392D090082CA6D /* SwiftUICustomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB36A82C392D090082CA6D /* SwiftUICustomApp.swift */; };
 		E1DB36AB2C392D090082CA6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB36AA2C392D090082CA6D /* ContentView.swift */; };
 		E1DB36AD2C392D0B0082CA6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1DB36AC2C392D0B0082CA6D /* Assets.xcassets */; };
@@ -28,6 +33,11 @@
 		E1080A082C3A5E0500910CA8 /* HalfModalCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalCustom.swift; sourceTree = "<group>"; };
 		E1080A0A2C3A789A00910CA8 /* FlexibleHeightModalCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleHeightModalCustom.swift; sourceTree = "<group>"; };
 		E1080A0C2C3A7F3500910CA8 /* BannerCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCustom.swift; sourceTree = "<group>"; };
+		E1A9F9BC2C43497400A2476D /* AppTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarView.swift; sourceTree = "<group>"; };
+		E1A9F9BE2C43498C00A2476D /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		E1A9F9C02C434FB500A2476D /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		E1A9F9C22C43511A00A2476D /* CustomTabContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabContainerView.swift; sourceTree = "<group>"; };
+		E1A9F9C42C4353F300A2476D /* TabBarItemPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemPreferenceKey.swift; sourceTree = "<group>"; };
 		E1DB36A52C392D090082CA6D /* SwiftUICustom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICustom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DB36A82C392D090082CA6D /* SwiftUICustomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICustomApp.swift; sourceTree = "<group>"; };
 		E1DB36AA2C392D090082CA6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +76,18 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		E1A9F9BB2C43495600A2476D /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E1A9F9BC2C43497400A2476D /* AppTabBarView.swift */,
+				E1A9F9C02C434FB500A2476D /* CustomTabView.swift */,
+				E1A9F9C22C43511A00A2476D /* CustomTabContainerView.swift */,
+				E1A9F9BE2C43498C00A2476D /* TabBarItem.swift */,
+				E1A9F9C42C4353F300A2476D /* TabBarItemPreferenceKey.swift */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
 		E1DB369C2C392D090082CA6D = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +107,6 @@
 		E1DB36A72C392D090082CA6D /* SwiftUICustom */ = {
 			isa = PBXGroup;
 			children = (
-				E102B13F2C41FA73004FD830 /* SwipeHiddenHeader */,
 				E1DB36A82C392D090082CA6D /* SwiftUICustomApp.swift */,
 				E1DB36AA2C392D090082CA6D /* ContentView.swift */,
 				E1DB36B92C392D710082CA6D /* Const.swift */,
@@ -95,6 +116,8 @@
 				E1080A082C3A5E0500910CA8 /* HalfModalCustom.swift */,
 				E1080A0A2C3A789A00910CA8 /* FlexibleHeightModalCustom.swift */,
 				E1080A0C2C3A7F3500910CA8 /* BannerCustom.swift */,
+				E102B13F2C41FA73004FD830 /* SwipeHiddenHeader */,
+				E1A9F9BB2C43495600A2476D /* CustomTabBar */,
 			);
 			path = SwiftUICustom;
 			sourceTree = "<group>";
@@ -177,14 +200,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A9F9BD2C43497400A2476D /* AppTabBarView.swift in Sources */,
 				E1080A0D2C3A7F3500910CA8 /* BannerCustom.swift in Sources */,
 				E102B1442C41FF66004FD830 /* Extensions.swift in Sources */,
 				E1DB36AB2C392D090082CA6D /* ContentView.swift in Sources */,
 				E1DB36BA2C392D710082CA6D /* Const.swift in Sources */,
 				E1080A0B2C3A789A00910CA8 /* FlexibleHeightModalCustom.swift in Sources */,
+				E1A9F9BF2C43498C00A2476D /* TabBarItem.swift in Sources */,
+				E1A9F9C32C43511A00A2476D /* CustomTabContainerView.swift in Sources */,
 				E1080A092C3A5E0500910CA8 /* HalfModalCustom.swift in Sources */,
+				E1A9F9C52C4353F300A2476D /* TabBarItemPreferenceKey.swift in Sources */,
 				E102B1462C420698004FD830 /* OffsetHelper.swift in Sources */,
 				E1DB36A92C392D090082CA6D /* SwiftUICustomApp.swift in Sources */,
+				E1A9F9C12C434FB500A2476D /* CustomTabView.swift in Sources */,
 				E102B1412C41FA83004FD830 /* YoutubeHome.swift in Sources */,
 				E1DB36B72C392D210082CA6D /* ButtonCustom.swift in Sources */,
 			);
