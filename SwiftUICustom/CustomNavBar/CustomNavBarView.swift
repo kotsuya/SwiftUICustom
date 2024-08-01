@@ -7,12 +7,22 @@
 
 import SwiftUI
 
-struct CustomNavBarView: View {
+struct CustomNavBarView<Content: View>: View {
+    let content: Content
+    init(@ViewBuilder content: () -> Content) {
+        self.content = content()
+    }
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            CustomNavContainerView {
+                content
+            }
+        }
     }
 }
 
 #Preview {
-    CustomNavBarView()
+    CustomNavBarView {
+        Color.red.ignoresSafeArea()
+    }
 }

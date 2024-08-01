@@ -1,5 +1,5 @@
 //
-//  CustomTabView.swift
+//  TabViewCustom.swift
 //  SwiftUICustom
 //
 //  Created by YOO on 2024/07/21.
@@ -7,17 +7,16 @@
 
 import SwiftUI
 
-struct CustomTabView: View {
+struct TabViewCustom: View {
     var tabs = ["house", "mail", "folder", "gearshape"]
     
     @State var selectedTab = "house"
-    var edge = UIApplication.shared.windows.first?.safeAreaInsets
 
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom), content: {
 
             TabView(selection: $selectedTab) {
-                Color.red
+                Home()
                     .tag("house")
 
                 Email()
@@ -48,7 +47,7 @@ struct CustomTabView: View {
             .shadow(color: Color.black.opacity(0.15), radius: 5, x: 5, y: 5)
             .shadow(color: Color.black.opacity(0.15), radius: 5, x: -5, y: -5)
             .padding(.horizontal)
-            .padding(.bottom, edge!.bottom == 0 ? 20 : 0)
+            .padding(.bottom, safeArea().bottom == 0 ? 20 : 0)
         })
         .ignoresSafeArea(.keyboard, edges: .bottom)
         .background(
@@ -107,5 +106,5 @@ struct TabButton: View {
 }
 
 #Preview {
-    CustomTabView()
+    TabViewCustom()
 }

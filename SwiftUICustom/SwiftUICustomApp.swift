@@ -13,7 +13,8 @@ struct SwiftUICustomApp: App {
         WindowGroup {
 //            ContentView(item: 0)
 //            YoutubeHome()
-            AppTabBarView()
+//            AppTabBarView()
+            AppNavBarView()
         }
     }
 }
