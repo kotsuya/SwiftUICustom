@@ -9,9 +9,11 @@ import SwiftUI
 
 struct AlertCustom: View {
     @State private var isNativeAlert: Bool = false
+    @State private var password: String = ""
     @State private var isHUD: Bool = false
     @State private var isCustomAlert: Bool = false
-    @State private var password: String = ""
+    @State private var isCustomDialog: Bool = false
+    
     
     var body: some View {
         ZStack {
@@ -42,6 +44,14 @@ struct AlertCustom: View {
                 }, label: {
                     Text("Custom Alert")
                 })
+                
+                Button(action: {
+                    withAnimation {
+                        isCustomDialog.toggle()
+                    }
+                }, label: {
+                    Text("Custom Dialog")
+                })
             }
             
             if isCustomAlert {
@@ -50,6 +60,12 @@ struct AlertCustom: View {
             
             if isHUD {
                 HUDProgressView(isShow: $isHUD, placeholder: "Please Wait")
+            }
+            
+            if isCustomDialog {
+                CustomDialog(isShow: $isCustomDialog, title: "Title", message: "MessageMessageMessageMessageMessageMessageMessageMessageMessage", buttonTitle: "Button Title") {
+                    
+                }
             }
         }
         .ignoresSafeArea()
@@ -153,7 +169,6 @@ struct CustomAlert: View {
                 withAnimation {
                     isShow.toggle()
                 }
-                
             }, label: {
                 Image(systemName: "xmark.circle")
                     .font(.system(size: 28, weight: .bold))
@@ -161,6 +176,68 @@ struct CustomAlert: View {
                     .padding()
             })
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.primary.opacity(0.35))
+    }
+}
+
+struct CustomDialog: View {
+    @Binding var isShow: Bool
+    let title: String
+    let message: String
+    let buttonTitle: String
+    let action: () -> ()
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            Text(title)
+                .font(.title)
+                .bold()
+                .padding()
+            
+            Text(message)
+                .font(.body)
+                .padding(.horizontal, 20)
+            
+            Button(action: {
+                action()
+            }, label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .foregroundStyle(.red)
+                    
+                    Text(buttonTitle)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.white)
+                        .padding()                        
+                }
+                .padding(.all, 20)
+            })
+        }
+        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+        .padding()
+        .background(BlurView())
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .overlay {
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        withAnimation {
+                            isShow.toggle()
+                        }
+                    }, label: {
+                        Image(systemName: "xmark.circle")
+                            .font(.system(size: 28, weight: .bold))
+                            .foregroundStyle(.black)
+                    })
+                }
+                Spacer()
+            }
+            .padding()
+        }
+        .shadow(radius: 10)
+        .padding(30)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.primary.opacity(0.35))
     }
