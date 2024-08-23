@@ -10,9 +10,8 @@ import SwiftUI
 struct BannerCustom: View {
     
     @State private var showView: Bool = false
-    
     var body: some View {
-        ZStack(alignment: .top) {
+        ZStack(alignment: .bottom) {
             VStack {
                 Spacer()
                 CustomButton(title: "Show Banner") {
@@ -30,9 +29,11 @@ struct BannerCustom: View {
                         width: screenWidth * 0.9,
                         height: screenHeight * 0.1
                     )
-                    .transition(.move(edge: .top))
+                    .transition(.move(edge: .bottom))
+                    .padding(.bottom, safeArea().bottom)
             }
         }
+        .ignoresSafeArea()
     }
 }
 

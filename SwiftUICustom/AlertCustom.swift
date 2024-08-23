@@ -14,6 +14,8 @@ struct AlertCustom: View {
     @State private var isCustomAlert: Bool = false
     @State private var isCustomDialog: Bool = false
     
+    @State private var showSheet: Bool = false
+    
     
     var body: some View {
         ZStack {
@@ -52,6 +54,17 @@ struct AlertCustom: View {
                 }, label: {
                     Text("Custom Dialog")
                 })
+                
+                Divider()
+                
+                Button {
+                    showSheet.toggle()
+                } label: {
+                    Text("Sheet")
+                }
+                .sheet(isPresented: $showSheet, content: {
+                    SheetView()
+                })
             }
             
             if isCustomAlert {
@@ -68,7 +81,6 @@ struct AlertCustom: View {
                 }
             }
         }
-        .ignoresSafeArea()
     }
     
     func alertView() {
@@ -123,7 +135,7 @@ struct HUDProgressView: View {
                 animate.toggle()
             }
         }
-        
+        .ignoresSafeArea()
     }
 }
 
@@ -186,7 +198,24 @@ struct CustomDialog: View {
     let title: String
     let message: String
     let buttonTitle: String
+    let isAnimation: Bool
     let action: () -> ()
+    
+    init(
+        isShow: Binding<Bool>,
+        title: String,
+        message: String,
+        buttonTitle: String,
+        isAnimation: Bool = true,
+        action: @escaping () -> ()
+    ) {
+        self._isShow = isShow
+        self.title = title
+        self.message = message
+        self.buttonTitle = buttonTitle
+        self.isAnimation = isAnimation
+        self.action = action
+    }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -223,8 +252,14 @@ struct CustomDialog: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        withAnimation {
-                            isShow.toggle()
+                        if isAnimation {
+                            withAnimation {
+                                isShow.toggle()
+                            }
+                        } else {
+                            withoutAnimation {
+                                isShow.toggle()
+                            }
                         }
                     }, label: {
                         Image(systemName: "xmark.circle")
@@ -255,6 +290,107 @@ struct BlurView: UIViewRepresentable {
     }
 }
 
+struct SheetView: View {
+    @Environment(\.dismiss) var dismiss
+    
+    @State private var isHUD: Bool = false
+    @State private var isCustomAlert: Bool = false
+    @State private var isCustomDialog: Bool = false
+    @State private var isAlert: Bool = false
+    
+    @State private var isPresented: Bool = false
+    
+    var body: some View {
+        ZStack {
+            VStack(spacing: 40) {
+                HStack {
+                    VStack(alignment: .trailing) {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image(systemName: "xmark.circle")
+                                .font(.largeTitle)
+                                .foregroundColor(.gray)
+                        }
+                    }
+                }
+                
+                Button(action: {
+                    withAnimation {
+                        isHUD.toggle()
+                    }
+                }, label: {
+                    Text("HUD Progress View")
+                })
+                
+                Button(action: {
+                    isAlert.toggle()
+                }, label: {
+                    Text("Alert")
+                })
+                .alert("Alert", isPresented: $isAlert) {
+                    Button("Cancel", role: .destructive) { }
+                    Button("OK", role: .cancel) { }
+                }
+                
+                Button(action: {
+                    withAnimation {
+                        isCustomAlert.toggle()
+                    }
+                }, label: {
+                    Text("Custom Alert")
+                })
+                
+                Button(action: {
+                    withAnimation {
+                        isCustomDialog.toggle()
+                    }
+                }, label: {
+                    Text("Custom Dialog")
+                })
+                
+                
+                Button(action: {
+                    withoutAnimation {
+                        isPresented.toggle()
+                    }
+                }, label: {
+                    Text("using fullScreenCover")
+                })
+                .fullScreenCover(isPresented: $isPresented) {
+                    CustomDialog(isShow: $isPresented, title: "Title", message: "MessageMessageMessageMessageMessageMessageMessageMessageMessage", buttonTitle: "Button Title", isAnimation: false) {
+                    }
+                }
+            }
+            
+            if isHUD {
+                HUDProgressView(isShow: $isHUD, placeholder: "Please Wait")
+            }
+            
+            if isCustomAlert {
+                CustomAlert(isShow: $isCustomAlert, title: "Title", message: "MessageMessageMessageMessageMessageMessageMessageMessageMessage")
+            }
+            
+            if isCustomDialog {
+                CustomDialog(isShow: $isCustomDialog, title: "Title", message: "MessageMessageMessageMessageMessageMessageMessageMessageMessage", buttonTitle: "Button Title") {
+                    
+                }
+            }
+        }
+    }
+}
+
 #Preview {
     AlertCustom()
+}
+
+extension View {
+    // MEMO: replace using: UIView.setAnimationsEnabled(false)
+    func withoutAnimation(action: @escaping () -> Void) {
+        var transaction = Transaction()
+        transaction.disablesAnimations = true
+        withTransaction(transaction) {
+            action()
+        }
+    }
 }
