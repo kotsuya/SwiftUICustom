@@ -14,7 +14,10 @@ struct SwiftUICustomApp: App {
 //            ContentView(item: 0)
 //            YoutubeHome()
 //            AppTabBarView()
-            AppNavBarView()
+//            AppNavBarView()
+//            FirstView()
+//            UserListView()
+            VideoPlayerCustomContentView()
         }
     }
 }
