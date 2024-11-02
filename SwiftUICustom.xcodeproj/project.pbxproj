@@ -31,6 +31,7 @@
 		E1978BDE2CD58B850009032B /* ErrorCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1978BDD2CD58B850009032B /* ErrorCases.swift */; };
 		E1978BE02CD58B9B0009032B /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1978BDF2CD58B9B0009032B /* UserListViewModel.swift */; };
 		E19DB5092C619C1700E76462 /* VideoPlayerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19DB5082C619C1700E76462 /* VideoPlayerCustom.swift */; };
+		E1A5D9A62CD5E6AE00D46DD8 /* ToastsCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A5D9A52CD5E6AE00D46DD8 /* ToastsCustom.swift */; };
 		E1A9F9BD2C43497400A2476D /* AppTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9F9BC2C43497400A2476D /* AppTabBarView.swift */; };
 		E1A9F9BF2C43498C00A2476D /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9F9BE2C43498C00A2476D /* TabBarItem.swift */; };
 		E1A9F9C12C434FB500A2476D /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9F9C02C434FB500A2476D /* CustomTabView.swift */; };
@@ -69,6 +70,7 @@
 		E1978BDD2CD58B850009032B /* ErrorCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCases.swift; sourceTree = "<group>"; };
 		E1978BDF2CD58B9B0009032B /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		E19DB5082C619C1700E76462 /* VideoPlayerCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerCustom.swift; sourceTree = "<group>"; };
+		E1A5D9A52CD5E6AE00D46DD8 /* ToastsCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastsCustom.swift; sourceTree = "<group>"; };
 		E1A9F9BC2C43497400A2476D /* AppTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarView.swift; sourceTree = "<group>"; };
 		E1A9F9BE2C43498C00A2476D /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		E1A9F9C02C434FB500A2476D /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				E16749072C5B04BF001FD7B7 /* AlertCustom.swift */,
 				E19DB5082C619C1700E76462 /* VideoPlayerCustom.swift */,
 				E16CF4572C8687AB000EF000 /* PopupViewCustom.swift */,
+				E1A5D9A52CD5E6AE00D46DD8 /* ToastsCustom.swift */,
 				E1978BD62CD588A80009032B /* AsyncAwaitSwiftUI */,
 				E1978BD52CD587750009032B /* SwiftUITest */,
 			);
@@ -299,6 +302,7 @@
 				E16CF4582C8687AB000EF000 /* PopupViewCustom.swift in Sources */,
 				E176D1E12C4B559B009698FB /* CustomNavBarView.swift in Sources */,
 				E1DB36BA2C392D710082CA6D /* Const.swift in Sources */,
+				E1A5D9A62CD5E6AE00D46DD8 /* ToastsCustom.swift in Sources */,
 				E1080A0B2C3A789A00910CA8 /* FlexibleHeightModalCustom.swift in Sources */,
 				E176D1E52C4B59E5009698FB /* NavBarPreferenceKeys.swift in Sources */,
 				E1A9F9BF2C43498C00A2476D /* TabBarItem.swift in Sources */,
