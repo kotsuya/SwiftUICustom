@@ -128,3 +128,35 @@ struct CustomButton: View {
         .frame(width: width - borderWidth, height: height - borderWidth)
     }
 }
+
+
+struct ImageButtonStyle: ButtonStyle {
+    var image: String
+    var pressedImage: String
+    
+    func makeBody(configuration: Configuration) -> some View {
+        let image = configuration.isPressed ? pressedImage : image
+        Image(systemName: image)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+    }
+}
+
+struct ImageButton: View {
+    var image: String
+    var pressedImage: String
+    var action: () -> Void
+    
+    var body: some View {
+        Button(action: self.action) { }
+            .buttonStyle(ImageButtonStyle(image: image, pressedImage: pressedImage))
+    }
+}
+
+#Preview {
+    ImageButton(image: "star",
+                pressedImage: "star.fill",
+                action: { })
+    .frame(width: 100, height: 100)
+    
+}

@@ -17,6 +17,8 @@ struct ContentLengthPreference: PreferenceKey {
 struct ContentView2: View {
    @State var textHeight: CGFloat = 0
    @State var text = String(repeating: "lorem ipsum ", count: 25)
+    @State private var isPressed = false
+        
    var body: some View {
       HStack {
         Rectangle()
@@ -49,10 +51,57 @@ struct ContentView2: View {
        .background(Color.black)
        .clipShape(Capsule())
        
+       
+       Button(action: {
+           // Do something..
+       }, label: {
+           Image(systemName: !isPressed ? "square.and.arrow.down.fill" : "pencil")
+               .resizable()
+               .aspectRatio(contentMode: .fit)
+       })
+       .buttonStyle(.plain)
+       .pressAction {
+           isPressed = true
+       } onRelease: {
+           isPressed = false
+       }
+       .frame(width: 100, height: 100)
+       
+      
+       
    }
 }
 
 
 #Preview {
     ContentView2()
+}
+
+struct PressActions: ViewModifier {
+    var onPress: () -> Void
+    var onRelease: () -> Void
+    
+    func body(content: Content) -> some View {
+        content
+            .simultaneousGesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged({ _ in
+                        onPress()
+                    })
+                    .onEnded({ _ in
+                        onRelease()
+                    })
+            )
+    }
+}
+ 
+ 
+extension View {
+    func pressAction(onPress: @escaping (() -> Void), onRelease: @escaping (() -> Void)) -> some View {
+        modifier(PressActions(onPress: {
+            onPress()
+        }, onRelease: {
+            onRelease()
+        }))
+    }
 }
