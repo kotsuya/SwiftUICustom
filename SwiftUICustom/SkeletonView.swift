@@ -82,7 +82,7 @@ struct SkeletonView<S: Shape>: View {
 //}
 
 @available(iOS 16.0, *)
-struct SelectionContentView: View {
+struct SkeletonContentView: View {
     @State private var isLoading: Bool = false
     @State private var cards: [Card] = []
     var body: some View {
@@ -90,11 +90,11 @@ struct SelectionContentView: View {
             VStack(spacing: 15) {
                 if cards.isEmpty {
                     ForEach(0..<3, id:\.self) { _ in
-                        SelectonCardView()
+                        SkeletonCardView()
                     }
                 } else {
                     ForEach(cards) { card in
-                        SelectonCardView(card: card)
+                        SkeletonCardView(card: card)
                     }
                 }
             }
@@ -123,7 +123,7 @@ struct Card: Identifiable {
     var description: String
 }
 
-struct SelectonCardView: View {
+struct SkeletonCardView: View {
     var card: Card?
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
@@ -186,5 +186,5 @@ struct SelectonCardView: View {
 
 @available(iOS 16.0, *)
 #Preview {
-    SelectionContentView()
+    SkeletonContentView()
 }

@@ -23,8 +23,8 @@ struct SwiftUICustomApp: App {
 //            CachedAsyncImageView()
 //            ShimmerSwiftUIView()
 //            HomeView()
-            if #available(iOS 16, *) {
-                SwipeBackTest()
+            if #available(iOS 16.0, *) {
+                SkeletonContentView()
             } else {
                 // Fallback on earlier versions
             }
