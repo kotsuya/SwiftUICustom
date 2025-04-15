@@ -21,7 +21,7 @@ extension View {
 }
 
 struct ShimmerConfiguration {
-    var color: Color = .white
+    var color: Color = .red
     var speed: CGFloat = 1.2
     var delay: CGFloat = 0.2
 }

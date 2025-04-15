@@ -40,8 +40,57 @@ struct SwiftUICustomTests: View {
     }
 }
 
-#Preview {
-    EscapingTest() {
-        print("akbakb")
+struct AkbakbakbTest: View {
+    var body: some View {
+        Button {
+        
+        } label: {
+            HStack {
+                VStack {
+                    Spacer()
+                    Text("test")
+                        .font(.caption)
+                        .frame(maxWidth: .infinity)
+//                        .background(.red)
+                }
+            }
+            .frame(height: 25)
+            .frame(maxWidth: .infinity)
+//            .background(.blue)
+        }
+//        .buttonStyle(SBButtonStyle(onTouchDown: {
+//            print("TOUCH DOWN")
+//        }, onTouchUp: {
+//            print("TOUCH UP")
+//        }))
+        .buttonStyle(AKBButtonStyle())
+        
     }
+}
+
+struct AKBButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .background(configuration.isPressed ? Color.blue : Color.red)
+    }
+}
+
+struct SBButtonStyle: ButtonStyle {
+    let onTouchDown: () -> Void
+    let onTouchUp: () -> Void
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .onChange(of: configuration.isPressed) { $0 ? onTouchDown() : onTouchUp() }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .contentShape(Rectangle())
+    }
+}
+
+#Preview {
+//    EscapingTest() {
+//        print("akbakb")
+//    }
+    
+    AkbakbakbTest()
 }

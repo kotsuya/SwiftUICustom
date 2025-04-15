@@ -15,61 +15,61 @@ struct ContentLengthPreference: PreferenceKey {
 }
 
 struct ContentView2: View {
-   @State var textHeight: CGFloat = 0
-   @State var text = String(repeating: "lorem ipsum ", count: 25)
+    @State var textHeight: CGFloat = 0
+    @State var text = String(repeating: "lorem ipsum ", count: 25)
     @State private var isPressed = false
+    
+    var body: some View {
+        HStack {
+            Rectangle()
+                .frame(width: 0, height: textHeight) // <-- this
+            
+            Text(text)
+                .overlay(
+                    GeometryReader { proxy in
+                        Color
+                            .clear
+                            .preference(key: ContentLengthPreference.self,
+                                        value: proxy.size.height)
+                    }
+                )
+        }
+        .onPreferenceChange(ContentLengthPreference.self) { value in
+            DispatchQueue.main.async {
+                print("akb::value::\(value)")
+                self.textHeight = value
+            }
+        }
         
-   var body: some View {
-      HStack {
-        Rectangle()
-           .frame(width: 0, height: textHeight) // <-- this
+        Button(action: {
+            text.append("lorem ipsum ")
+        }, label: {
+            Text("++Button")
+                .padding(20)
+        })
+        .tint(Color.white)
+        .background(Color.black)
+        .clipShape(Capsule())
         
-        Text(text)
-           .overlay(
-              GeometryReader { proxy in
-                Color
-                   .clear
-                   .preference(key: ContentLengthPreference.self,
-                               value: proxy.size.height)
-              }
-           )
-      }
-      .onPreferenceChange(ContentLengthPreference.self) { value in
-          DispatchQueue.main.async {
-              print("akb::value::\(value)")
-              self.textHeight = value
-          }
-      }
-       
-       Button(action: {
-           text.append("lorem ipsum ")
-       }, label: {
-           Text("++Button")
-               .padding(20)
-       })
-       .tint(Color.white)
-       .background(Color.black)
-       .clipShape(Capsule())
-       
-       
-       Button(action: {
-           // Do something..
-       }, label: {
-           Image(systemName: !isPressed ? "square.and.arrow.down.fill" : "pencil")
-               .resizable()
-               .aspectRatio(contentMode: .fit)
-       })
-       .buttonStyle(.plain)
-       .pressAction {
-           isPressed = true
-       } onRelease: {
-           isPressed = false
-       }
-       .frame(width: 100, height: 100)
-       
-      
-       
-   }
+        
+        Button(action: {
+            // Do something..
+        }, label: {
+            Image(systemName: !isPressed ? "square.and.arrow.down.fill" : "pencil")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        })
+        .buttonStyle(.plain)
+        .pressAction {
+            isPressed = true
+        } onRelease: {
+            isPressed = false
+        }
+        .frame(width: 100, height: 100)
+        
+        
+        
+    }
 }
 
 
