@@ -9,25 +9,14 @@ import SwiftUI
 
 @main
 struct SwiftUICustomApp: App {
+    @StateObject private var networkMonitor = NetworkMonitor()
+    
+    
     var body: some Scene {
         WindowGroup {
-//            ContentView(item: 0)
-//            YoutubeHome()
-//            AppTabBarView()
-//            AppNavBarView()
-//            FirstView()
-//            UserListView()
-//            VideoPlayerCustomContentView()
-//            ListScrollTest()
-            
-//            CachedAsyncImageView()
-//            ShimmerSwiftUIView()
-//            HomeView()
-            if #available(iOS 16.0, *) {
-                SkeletonContentView()
-            } else {
-                // Fallback on earlier versions
-            }
+            NetworkMonitorContentView()
+                .environment(\.isNetworkConnected, networkMonitor.isConnected)
+                .environment(\.connectionType, networkMonitor.connectionType)
         }
     }
 }
