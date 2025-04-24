@@ -11,12 +11,15 @@ import SwiftUI
 struct SwiftUICustomApp: App {
     @StateObject private var networkMonitor = NetworkMonitor()
     
-    
     var body: some Scene {
         WindowGroup {
-            NetworkMonitorContentView()
-                .environment(\.isNetworkConnected, networkMonitor.isConnected)
-                .environment(\.connectionType, networkMonitor.connectionType)
+            ChipsViewContent()
         }
+        
+//        WindowGroup {
+//            NetworkMonitorContentView()
+//                .environment(\.isNetworkConnected, networkMonitor.isConnected)
+//                .environment(\.connectionType, networkMonitor.connectionType)
+//        }
     }
 }

@@ -50,6 +50,7 @@
 		E1DB36B02C392D0B0082CA6D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1DB36AF2C392D0B0082CA6D /* Preview Assets.xcassets */; };
 		E1DB36B72C392D210082CA6D /* ButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB36B62C392D210082CA6D /* ButtonCustom.swift */; };
 		E1DB36BA2C392D710082CA6D /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB36B92C392D710082CA6D /* Const.swift */; };
+		E1DB3C342DB856E1008967B3 /* ChipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB3C332DB856E1008967B3 /* ChipsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		E1DB36AF2C392D0B0082CA6D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E1DB36B62C392D210082CA6D /* ButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustom.swift; sourceTree = "<group>"; };
 		E1DB36B92C392D710082CA6D /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		E1DB3C332DB856E1008967B3 /* ChipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 				E17A606A2D686599001ACB33 /* Shimmer.swift */,
 				E1060ACB2D6894230010DC72 /* ShimmerE.swift */,
 				E17918A42DB1AC8800688A89 /* NetworkMonitor.swift */,
+				E1DB3C332DB856E1008967B3 /* ChipsView.swift */,
 			);
 			path = SwiftUICustom;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				E1978BE02CD58B9B0009032B /* UserListViewModel.swift in Sources */,
 				E1978BD82CD589520009032B /* UserListView.swift in Sources */,
 				E1A9F9C12C434FB500A2476D /* CustomTabView.swift in Sources */,
+				E1DB3C342DB856E1008967B3 /* ChipsView.swift in Sources */,
 				E102B1412C41FA83004FD830 /* YoutubeHome.swift in Sources */,
 				E16749082C5B04BF001FD7B7 /* AlertCustom.swift in Sources */,
 				E1DB36B72C392D210082CA6D /* ButtonCustom.swift in Sources */,
